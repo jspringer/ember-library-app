@@ -1,0 +1,24 @@
+<div class="jumbotron text-center">
+    <h1>{{headerMessage}}</h1>
+
+    <br/><br/>
+
+    <p>Browse our database of {{#link-to 'libraries'}}libraries{{/link-to}}, 
+        {{#link-to 'authors'}}authors{{/link-to}}, and {{#link-to 'books'}}books{{/link-to}}.</p>
+    <p>Sign up below for an invitation to edit content.</p>
+
+    <div class="form-horizontal form-group form-group-lg row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+          {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+            <button class="btn btn-primary btn-lg btn-block" {{action 'saveInvitation'}} disabled={{isDisabled}}>Request invitation</button>
+        </div>
+    </div>
+
+    {{#if responseMessage}}
+        <div class="alert alert-success" role="alert">{{responseMessage}}</div>
+    {{/if}}
+
+    <br/><br/>
+</div>
